@@ -1,0 +1,144 @@
+/* Container */
+.signup-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f0f9ff, #e0f7fa);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Card */
+.signup-card {
+  background: #fff;
+  padding: 45px 40px;
+  border-radius: 20px;
+  width: 380px;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title & subtitle */
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Form */
+.form-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  background: #fafafa;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+}
+
+/* Signup button */
+.signup-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #000, #333);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  background: linear-gradient(135deg, #333, #000);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Divider for bottom text */
+.divider {
+  margin: 25px 0 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.divider:not(:empty)::before {
+  margin-right: 10px;
+}
+.divider:not(:empty)::after {
+  margin-left: 10px;
+}
+
+/* Bottom text */
+.login-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.link-btn:hover {
+  color: #0056b3;
+}

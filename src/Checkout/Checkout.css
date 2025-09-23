@@ -1,0 +1,95 @@
+/* checkout */
+
+.checkout {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Back button */
+.checkout .back-btn {
+  padding: 8px 16px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.checkout .back-btn:hover {
+  background: #222;
+}
+
+/* Title */
+.checkout .checkout-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table */
+.checkout .checkout-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.checkout .checkout-table th,
+.checkout .checkout-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.checkout .checkout-table th {
+  background: #f1f1f1;
+  font-weight: bold;
+  color: #333;
+}
+
+.checkout .checkout-table tr:hover {
+  background: #fafafa;
+}
+
+/* Table images */
+.checkout .checkout-table img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Total */
+.checkout .checkout-total {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #222;
+}
+
+/* Checkout button */
+.checkout .checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout .checkout-btn:hover {
+  background: #218838;
+}

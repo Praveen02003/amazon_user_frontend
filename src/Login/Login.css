@@ -1,0 +1,190 @@
+/* Container */
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f0f9ff, #e0f7fa);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Card */
+.login-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 22px;
+  width: 380px;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 22px;
+}
+
+/* Form */
+.form-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  background: #fafafa;
+  transition: all 0.25s ease;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+}
+
+/* Options row */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+/* Link button */
+.link-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.link-btn:hover {
+  color: #0056b3;
+}
+
+/* Login button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #000, #333);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #333, #000);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Social login buttons */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.social-btn {
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Different colors per brand */
+.social-btn.google {
+  color: #ea4335;
+  border: 1px solid #ea4335;
+}
+
+.social-btn.apple {
+  color: #000;
+  border: 1px solid #000;
+}
+
+.social-btn.x {
+  color: #1d1d1d;
+  border: 1px solid #1d1d1d;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 18px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.divider:not(:empty)::before {
+  margin-right: 12px;
+}
+.divider:not(:empty)::after {
+  margin-left: 12px;
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 22px;
+  font-size: 14px;
+  color: #666;
+}

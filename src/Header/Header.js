@@ -1,0 +1,58 @@
+import React, { useContext, useEffect } from 'react'
+import '../Header/Header.css'
+import { useNavigate } from 'react-router-dom';
+import amazonimage from '../assets/amazon.png'
+import { logout } from '../Functions/Logoutdata';
+import { Mycontext } from '../App'
+import { getcartlength } from '../Functions/Getcartlength';
+import { ShoppingCart } from "lucide-react";
+import axios from '../Axios/Axios.js';
+export const Header = () => {
+  const {
+    count,
+    setCount,
+  } = useContext(Mycontext)
+
+  
+
+  const navigate = useNavigate()
+
+
+
+  useEffect(() => {
+    //console.log("Count changed:", count);
+  }, [count])
+
+  return (
+    <div>
+      <div className='header'>
+        {/* Left: Logo + Brand */}
+        <div className="header-left">
+          <img src={amazonimage} alt="img" className='logoimage' />
+          <h1>Amazon.in</h1>
+        </div>
+
+        {/* Center: Nav links */}
+        <div className="header-center">
+          <h2 onClick={() => { navigate('/') }}>Home</h2>
+          <h2 onClick={() => { navigate('/hot') }}>Hot</h2>
+          <h2 onClick={() => { navigate('/wishlist') }}>Wishlist</h2>
+          <div className="cart-icon" onClick={() => navigate('/cart')}>
+            <ShoppingCart size={28} />
+            <span className="cart-count">{getcartlength()}</span>
+            <span className="cart-text">Cart</span>
+          </div>
+        </div>
+
+        {/* Right: Auth links */}
+        <div className='header-right'>
+          {localStorage.getItem("Token") ? "" : <h2 onClick={() => { navigate('/signup') }}>Signup</h2>}
+          {localStorage.getItem("Token") ? "" : <h2 onClick={() => { navigate('/login') }}>Login</h2>}
+          {localStorage.getItem("Token") ? <h2>{localStorage.getItem("mail")}</h2> : ""}
+          {localStorage.getItem("Token") ? <h2 onClick={() => { logout(count, setCount, navigate) }}>Logout</h2> : ""}
+        </div>
+      </div>
+    </div>
+
+  )
+}

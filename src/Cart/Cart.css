@@ -1,0 +1,97 @@
+/* Cart */
+
+.cart {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.cart h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+
+.cart-table tr:hover {
+  background: #fafafa;
+}
+
+/* Product image */
+.cart-table img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Quantity controls */
+.cart-table button {
+  padding: 5px 10px;
+  margin: 0 3px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #eee;
+  transition: 0.3s;
+}
+
+.cart-table button:hover {
+  background: #ddd;
+}
+
+.cart-table input {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Remove button */
+.cart-table td button:last-child {
+  background: #e74c3c;
+  color: white;
+}
+
+.cart-table td button:last-child:hover {
+  background: #c0392b;
+}
+
+/* Checkout button */
+.cartbutton {
+  width: 100%;
+  padding: 12px;
+  background: #009cfe;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cartbutton:hover {
+  background: rgb(4, 14, 95);
+}
