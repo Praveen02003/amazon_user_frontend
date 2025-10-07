@@ -86,7 +86,7 @@ export const Tv = () => {
                     {item.defaultprice !== 0 && <div className='tv-old-price'>{item.defaultprice}rs</div>}
                     <div className='tv-price'>{item.price}rs</div>
                   </div>
-                  <button className='buy-btn' onClick={() => { navigate('/notfound') }}>Buy Now</button>
+                  {/* <button className='buy-btn' onClick={() => { navigate('/notfound') }}>Buy Now</button> */}
                   {disable(item, addtocartobject, setAddtocartobject, cartquantity, setCartquantity,setOpen)}
                 </div>
 

@@ -13,7 +13,7 @@ export const Header = () => {
     setCount,
   } = useContext(Mycontext)
 
-  
+
 
   const navigate = useNavigate()
 
@@ -52,6 +52,7 @@ export const Header = () => {
           {localStorage.getItem("Token") ? <h2 onClick={() => { logout(count, setCount, navigate) }}>Logout</h2> : ""}
         </div>
       </div>
+      
     </div>
 
   )

@@ -87,7 +87,7 @@ export const Mobiles = () => {
                     {item.defaultprice !== 0 && <div className='mobile-old-price'>{item.defaultprice}rs</div>}
                     <div className='mobile-price'>{item.price}rs</div>
                   </div>
-                  <button className='buy-btn' onClick={() => { navigate('/notfound') }}>Buy Now</button>
+                  {/* <button className='buy-btn' onClick={() => { navigate('/notfound') }}>Buy Now</button> */}
                   {disable(item, addtocartobject, setAddtocartobject, cartquantity, setCartquantity,setOpen)}
                 </div>
 
