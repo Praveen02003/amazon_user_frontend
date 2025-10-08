@@ -86,7 +86,7 @@ export const Wishlist = () => {
                     {item.defaultprice !== 0 && <div className='wishlist-old-price'>{item.defaultprice}rs</div>}
                     <div className='wishlist-price'>{item.price}rs</div>
                   </div>
-                  <button className='buy-btn' onClick={() => { navigate('/notfound') }}>Buy Now</button>
+                  {/* <button className='buy-btn' onClick={() => { navigate('/notfound') }}>Buy Now</button> */}
                   {disable(item, addtocartobject, setAddtocartobject, cartquantity, setCartquantity,setOpen)}
                 </div>
 

@@ -92,7 +92,7 @@ export const Laptops = () => {
                   <span className="laptop-price">{item.price} rs</span>
                 </div>
               </div>
-              {/* <button className="buy-btn" onClick={() => navigate('/notfound')}>
+              {/* <button className="buy-btn" onClick={() => navigate('/abcd')}>
                 Buy Now
               </button> */}
               {disable(item, addtocartobject, setAddtocartobject, cartquantity, setCartquantity,setOpen)}

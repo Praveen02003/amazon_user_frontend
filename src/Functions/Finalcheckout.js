@@ -1,7 +1,7 @@
 import axios from "../Axios/Axios.js"
 
 export const finalcheckout=async(navigate)=>{
-    navigate('/notfound')
+    navigate('/payment')
     const usermailinput=localStorage.getItem("loginuserdataemail")
     const cartitems=JSON.parse(localStorage.getItem(`${usermailinput}cartitems`))
     const cartquantity=JSON.parse(localStorage.getItem(`${usermailinput}cartquantity`))

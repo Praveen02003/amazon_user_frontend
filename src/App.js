@@ -20,6 +20,7 @@ import { Login } from './Login/Login';
 import { Signup } from './Signup/Signup';
 import { Forgetpassword } from './Forgetpassword/Forgetpassword';
 import { Contact } from './Contact/Contact';
+import { Qr } from './Qr/Qr';
 export const Mycontext=createContext()
 function App() {
   const[usermail,setUsermail]=useState("")
@@ -53,6 +54,8 @@ function App() {
   const [signuperror, setSignuperror] = useState("");
   const [loginerror, setLoginerror] = useState("");
   const [severity, setSeverity] = useState("");
+  const [paymentqr, setPaymentqr] = useState("");
+  const [paymentprice, setPaymentprice] = useState("");
   return (
     <div>
       <Router>
@@ -118,7 +121,11 @@ function App() {
           severity,
           setSeverity,
           loginerror,
-          setLoginerror
+          setLoginerror,
+          paymentqr,
+          setPaymentqr,
+          paymentprice,
+          setPaymentprice
         }}>
           <Header/>
           <Routes>
@@ -139,7 +146,8 @@ function App() {
             <Route path='/mouses' element={<Mouse/>}/>
             <Route path='/chargers' element={<Chargers/>}/>
             <Route path='/checkout' element={<Checkout/>}/>
-            <Route path='/notfound' element={<Notfound/>}/>
+            <Route path='*' element={<Notfound/>}/>
+            <Route path='/payment' element={<Qr/>}/>
           </Routes>
           <Footer/>
         </Mycontext.Provider>

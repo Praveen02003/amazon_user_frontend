@@ -13,6 +13,8 @@ export const fetchtotalprice=(cartpricedatas,setTotalprice)=>{
       return sum + (item.price * (cartquantityobject[item.title] || 0))
     }, 0)
 
+    //console.log(total);
+    
     setTotalprice(total)
     const usermail=localStorage.getItem("loginuserdataemail")
     //console.log(usermail);
