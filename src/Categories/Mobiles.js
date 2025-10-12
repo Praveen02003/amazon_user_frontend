@@ -11,6 +11,7 @@ import { Loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
+import { getlocalstorage } from '../Functions/Getlocalstorage.js'
 export const Mobiles = () => {
   const {
     mobiledata,
@@ -36,22 +37,8 @@ export const Mobiles = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    var usermailinput=""
-    var usermailfinal=""
-    usermailinput=localStorage.getItem("loginuserdataemail")
-    //console.log("--->",usermailinput);
-    if (usermailinput != null )
-    {
-        usermailfinal=localStorage.getItem("loginuserdataemail")
-    }
-    const storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || JSON.parse(localStorage.getItem(`${usermailfinal}wishlist`)) ||{};
-    setWishlistcheckedobject(storedWishlist);
-    //console.log(storedWishlist);
-    const cartdetails = JSON.parse(localStorage.getItem("cartitems")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartitems`)) ||{};
-    setAddtocartobject(cartdetails)
-    const cartitemsquantity = JSON.parse(localStorage.getItem("cartquantity")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartquantity`)) ||{};
-    setCartquantity(cartitemsquantity)
     try {
+      getlocalstorage(setWishlistcheckedobject, setAddtocartobject, setCartquantity)
       fetchmobile()
     }
     catch (error) {
@@ -61,7 +48,6 @@ export const Mobiles = () => {
 
   return (
     <div className='mobile'>
-      <button className="back-btn" onClick={() => { navigate('/') }}>Back</button>
       <h1 className='mobile-title'>Mobiles</h1>
       <div className='mobile-grid'>
         {mobiledata.length === 0 ? Loader() :

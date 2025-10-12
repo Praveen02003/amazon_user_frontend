@@ -11,6 +11,7 @@ import { Loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
+import { getlocalstorage } from '../Functions/Getlocalstorage.js'
 export const Mouse = () => {
   const {
     mousedata,
@@ -36,22 +37,8 @@ export const Mouse = () => {
 
 
   useEffect(() => {
-   var usermailinput=""
-    var usermailfinal=""
-    usermailinput=localStorage.getItem("loginuserdataemail")
-    //console.log("--->",usermailinput);
-    if (usermailinput != null )
-    {
-        usermailfinal=localStorage.getItem("loginuserdataemail")
-    }
-    const storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || JSON.parse(localStorage.getItem(`${usermailfinal}wishlist`)) ||{};
-    setWishlistcheckedobject(storedWishlist);
-    //console.log(storedWishlist);
-    const cartdetails = JSON.parse(localStorage.getItem("cartitems")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartitems`)) ||{};
-    setAddtocartobject(cartdetails)
-    const cartitemsquantity = JSON.parse(localStorage.getItem("cartquantity")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartquantity`)) ||{};
-    setCartquantity(cartitemsquantity)
     try {
+      getlocalstorage(setWishlistcheckedobject, setAddtocartobject, setCartquantity)
       fetchmouses()
     }
     catch (error) {
@@ -60,7 +47,6 @@ export const Mouse = () => {
   }, [count])
   return (
     <div className='mouse'>
-      <button className="back-btn" onClick={() => { navigate('/') }}>Back</button>
       <h1 className='mouse-title'>Mouse</h1>
       <div className='mouse-grid'>
         {mousedata.length === 0 ? Loader() :

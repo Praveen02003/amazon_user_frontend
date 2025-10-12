@@ -12,6 +12,7 @@ import { Loader, loader } from '../Loader/Loader.js'
 import { handleClose } from '../Functions/Handleclose.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import { getlocalstorage } from '../Functions/Getlocalstorage.js'
 export const Wishlist = () => {
   const {
     wishlistProducts,
@@ -34,23 +35,10 @@ export const Wishlist = () => {
 
 
   useEffect(() => {
-    var usermailinput=""
-    var usermailfinal=""
-    usermailinput=localStorage.getItem("loginuserdataemail")
-    //console.log("--->",usermailinput);
-    if (usermailinput != null )
-    {
-        usermailfinal=localStorage.getItem("loginuserdataemail")
-    }
-    const wishlistitems = JSON.parse(localStorage.getItem("wishlist")) || JSON.parse(localStorage.getItem(`${usermailfinal}wishlist`)) ||{};
-    //console.log(wishlistitems);
-    setWishlistcheckedobject(wishlistitems);
-    const ids = Object.values(wishlistitems)
+    getlocalstorage(setWishlistcheckedobject, setAddtocartobject, setCartquantity)
+    const ids = Object.values(wishlistcheckedobject)
     //console.log(ids);
-    const cartdetails = JSON.parse(localStorage.getItem("cartitems")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartitems`)) ||{};
-    setAddtocartobject(cartdetails)
-    const cartitemsquantity = JSON.parse(localStorage.getItem("cartquantity")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartquantity`)) ||{};
-    setCartquantity(cartitemsquantity)
+
 
     getwishlistdata(ids, wishlistProducts, setWishlistProducts)
 
@@ -72,7 +60,7 @@ export const Wishlist = () => {
 
                 <div className='wishlist-heart'>
                   <input type="checkbox" id={`heart-wishlist-${index}`} checked={item.title in wishlistcheckedobject}
-                    onChange={() => {Wishlistchange(item, count, setCount, wishlistcheckedobject, setWishlistcheckedobject) }} />
+                    onChange={() => { Wishlistchange(item, count, setCount, wishlistcheckedobject, setWishlistcheckedobject) }} />
                   <label htmlFor={`heart-wishlist-${index}`}>&hearts;</label>
                 </div>
 
@@ -87,7 +75,7 @@ export const Wishlist = () => {
                     <div className='wishlist-price'>{item.price}rs</div>
                   </div>
                   {/* <button className='buy-btn' onClick={() => { navigate('/notfound') }}>Buy Now</button> */}
-                  {disable(item, addtocartobject, setAddtocartobject, cartquantity, setCartquantity,setOpen)}
+                  {disable(item, addtocartobject, setAddtocartobject, cartquantity, setCartquantity, setOpen)}
                 </div>
 
               </div>

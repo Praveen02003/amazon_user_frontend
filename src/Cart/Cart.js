@@ -21,13 +21,13 @@ export const Cart = () => {
 
   const navigate = useNavigate()
 
-  
+
 
 
 
   useEffect(() => {
     getcart(setCartdatas)
-    
+
   }, [count])
   return (
     <div className="cart">
@@ -44,16 +44,15 @@ export const Cart = () => {
           </tr>
         </thead>
         <tbody>
-          {cartdatas.length === 0 ? <p>No items in the cart</p> :cartdatas.map((item, index) => {
-            var usermailinput=""
-            var usermailfinal=""
-            usermailinput=localStorage.getItem("loginuserdataemail")
+          {cartdatas.length === 0 ? <p>No items in the cart</p> : cartdatas.map((item, index) => {
+            var usermailinput = ""
+            var usermailfinal = ""
+            usermailinput = localStorage.getItem("loginuserdataemail")
             //console.log("--->",usermailinput);
-            if (usermailinput != null )
-            {
-                usermailfinal=localStorage.getItem("loginuserdataemail")
+            if (usermailinput != null) {
+              usermailfinal = localStorage.getItem("loginuserdataemail")
             }
-            const cartquantity = JSON.parse(localStorage.getItem("cartquantity")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartquantity`)) ||{};
+            const cartquantity = JSON.parse(localStorage.getItem("cartquantity")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartquantity`)) || {};
             return (
               <tr key={index}>
                 <td>
@@ -73,7 +72,7 @@ export const Cart = () => {
                   <button onClick={() => quantity("dec", item.title, null, count, setCount)}>-</button>
                 </td>
                 <td>
-                  <button onClick={() => removefromcart(item.title, count, setCount,setOpen)}>
+                  <button onClick={() => removefromcart(item.title, count, setCount, setOpen)}>
                     Remove
                   </button>
                 </td>
@@ -86,7 +85,7 @@ export const Cart = () => {
       <button className="cartbutton" onClick={() => navigate("/checkout")}>
         Checkout
       </button>
-     <Snackbar
+      <Snackbar
         open={open}
         autoHideDuration={500}
         onClose={() => handleClose(setOpen)}
@@ -95,7 +94,7 @@ export const Cart = () => {
         <Alert severity="success" onClose={() => handleClose(setOpen)}>
           Item Removed
         </Alert>
-    </Snackbar>
+      </Snackbar>
     </div>
 
 

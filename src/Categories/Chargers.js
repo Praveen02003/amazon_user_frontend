@@ -11,6 +11,7 @@ import { Loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
+import { getlocalstorage } from '../Functions/Getlocalstorage.js'
 export const Chargers = () => {
   const {
     chargerdata,
@@ -36,22 +37,8 @@ export const Chargers = () => {
 
 
   useEffect(() => {
-    var usermailinput=""
-    var usermailfinal=""
-    usermailinput=localStorage.getItem("loginuserdataemail")
-    //console.log("--->",usermailinput);
-    if (usermailinput != null )
-    {
-        usermailfinal=localStorage.getItem("loginuserdataemail")
-    }
-    const storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || JSON.parse(localStorage.getItem(`${usermailfinal}wishlist`)) ||{};
-    setWishlistcheckedobject(storedWishlist);
-    //console.log(storedWishlist);
-    const cartdetails = JSON.parse(localStorage.getItem("cartitems")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartitems`)) ||{};
-    setAddtocartobject(cartdetails)
-    const cartitemsquantity = JSON.parse(localStorage.getItem("cartquantity")) || JSON.parse(localStorage.getItem(`${usermailfinal}cartquantity`)) ||{};
-    setCartquantity(cartitemsquantity)
     try {
+      getlocalstorage(setWishlistcheckedobject, setAddtocartobject, setCartquantity)
       fetchchargers()
     }
     catch (error) {
@@ -60,7 +47,6 @@ export const Chargers = () => {
   }, [count])
   return (
     <div className='charger'>
-      <button className="back-btn" onClick={() => { navigate('/') }}>Back</button>
       <h1 className='charger-title'>Chargers</h1>
       <div className='charger-grid'>
         {chargerdata.length === 0 ? Loader() :
@@ -87,7 +73,7 @@ export const Chargers = () => {
                     <div className='charger-price'>{item.price}rs</div>
                   </div>
                   {/* <button className='buy-btn' onClick={() => { navigate('/abcd') }}>Buy Now</button> */}
-                  {disable(item, addtocartobject, setAddtocartobject, cartquantity, setCartquantity,setOpen)}
+                  {disable(item, addtocartobject, setAddtocartobject, cartquantity, setCartquantity, setOpen)}
                 </div>
 
               </div>

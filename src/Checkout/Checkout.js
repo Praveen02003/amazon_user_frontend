@@ -29,9 +29,7 @@ export const Checkout = () => {
 
   return (
     <div className="checkout">
-      <button className="back-btn" onClick={() => navigate('/cart')}>
-        Back
-      </button>
+      
       <h1 className="checkout-title">Checkout</h1>
 
       <table className="checkout-table">

@@ -56,6 +56,8 @@ function App() {
   const [severity, setSeverity] = useState("");
   const [paymentqr, setPaymentqr] = useState("");
   const [paymentprice, setPaymentprice] = useState("");
+  const [showavatar, setShowavatar] = useState(false);
+
   return (
     <div>
       <Router>
@@ -125,7 +127,9 @@ function App() {
           paymentqr,
           setPaymentqr,
           paymentprice,
-          setPaymentprice
+          setPaymentprice,
+          showavatar,
+          setShowavatar
         }}>
           <Header/>
           <Routes>
