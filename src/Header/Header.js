@@ -26,7 +26,7 @@ export const Header = () => {
       {/* ===== Left: Logo + Brand ===== */}
       <div className="header-left" onClick={() => navigate('/')}>
         <img src={amazonimage} alt="Amazon Logo" className="logoimage" />
-        <h1>Amazon.in</h1>
+        <h1>Smartcart.in</h1>
       </div>
 
       {/* ===== Center: Nav Links + Cart + Notification ===== */}

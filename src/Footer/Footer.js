@@ -12,7 +12,7 @@ export const Footer = () => {
             <h3>About</h3>
             <p>Careers</p>
             <p>Press Releases</p>
-            <p>Amazon Science</p>
+            <p>Smartcart Science</p>
           </div>
           <div className="footer-column">
             <h3>Help</h3>
@@ -31,7 +31,7 @@ export const Footer = () => {
 
         <div className="footer-bottom">
           <img src={amazonimage} alt="img" className='footerimage' />
-          <h4>amazon.in | All Rights Reserved</h4>
+          <h4>Smartcart.in | All Rights Reserved</h4>
         </div>
       </div>
     </div>

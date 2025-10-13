@@ -5,7 +5,7 @@ export const Contact = () => {
         <div className="contact-container">
             <div className="contact-card">
                 <h1 className="title">Contact Us</h1>
-                <p className="subtitle">We’d love to hear from you! Fill out the form or reach us directly.</p>
+                <p className="subtitle">We'd love to hear from you! Fill out the form or reach us directly.</p>
 
                 {/* Contact Form */}
                 <div className="form-group">
@@ -30,9 +30,9 @@ export const Contact = () => {
 
                 {/* Contact Info */}
                 <div className="contact-info">
-                    <p><strong>Email:</strong> support@example.com</p>
+                    <p><strong>Email:</strong> support@smartcart.com</p>
                     <p><strong>Phone:</strong> +91 98765 43210</p>
-                    <p><strong>Address:</strong> Chennai, India</p>
+                    <p><strong>Address:</strong>India</p>
                 </div>
 
                 {/* Social Links */}
