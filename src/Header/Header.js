@@ -7,12 +7,16 @@ import { Mycontext } from '../App'
 import { getcartlength } from '../Functions/Getcartlength';
 import { ShoppingCart } from "lucide-react";
 import axios from '../Axios/Axios.js';
+import { getsearchdata } from '../Functions/Getsearchdata.js';
 export const Header = () => {
   const {
     count,
     setCount,
     showavatar,
-    setShowavatar
+    setShowavatar,
+    search,
+    setSearch,
+    setSearchdata
   } = useContext(Mycontext)
 
   const navigate = useNavigate()
@@ -29,11 +33,17 @@ export const Header = () => {
         <h1>Smartcart.in</h1>
       </div>
 
-      {/* ===== Center: Nav Links + Cart + Notification ===== */}
+      {/* ===== Center: Nav Links + Search Bar + Cart ===== */}
       <div className="header-center">
         <h2 onClick={() => navigate('/')}>Home</h2>
         <h2 onClick={() => navigate('/hot')}>Hot</h2>
         <h2 onClick={() => navigate('/wishlist')}>Wishlist</h2>
+
+        {/* --- Search Bar --- */}
+        <div className="search-bar">
+          <input type="text" placeholder="Search for products..." onChange={(event) => { setSearch(event.target.value) }} />
+          <button onClick={() => { getsearchdata(search, setSearchdata, navigate) }}>Search</button>
+        </div>
 
         <div className="cart-icon" onClick={() => navigate('/cart')}>
           <ShoppingCart size={28} />
@@ -68,12 +78,6 @@ export const Header = () => {
           )}
         </div>
       </div>
-
-
-
     </div>
-
-
-
   )
 }

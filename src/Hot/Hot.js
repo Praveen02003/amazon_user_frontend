@@ -12,6 +12,7 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
 import { getlocalstorage } from '../Functions/Getlocalstorage.js'
+import { getoffers } from '../Functions/Getoffers.js'
 
 export const Hot = () => {
   const {
@@ -33,16 +34,10 @@ export const Hot = () => {
 
   const navigate = useNavigate()
 
-  const getoffers = async () => {
-    const response = await axios.get("/getoffers")
-    //console.log(response.data.message);
-    setOfferProducts(response.data.message)
-
-  }
   useEffect(() => {
     try {
       getlocalstorage(setWishlistcheckedobject, setAddtocartobject, setCartquantity)
-      getoffers()
+      getoffers(setOfferProducts)
     } catch (error) {
       console.log("error");
     }

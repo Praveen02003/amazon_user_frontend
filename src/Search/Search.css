@@ -1,0 +1,167 @@
+/* ====== Search Page ====== */
+.search-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc, #eef2f3);
+  padding: 50px 60px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ====== Title ====== */
+.search-page h1 {
+  text-align: center;
+  color: #222;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+/* ====== Grid Layout ====== */
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* ====== Product Card ====== */
+.search-card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.search-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== Offer Badge ====== */
+.search-offer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== Wishlist Heart ====== */
+.search-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.search-heart input {
+  display: none;
+}
+
+.search-heart label {
+  font-size: 26px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.search-heart input:checked + label {
+  color: #ff4d4d;
+  transform: scale(1.15);
+}
+
+.search-heart label:hover {
+  transform: scale(1.1);
+  color: #ff8080;
+}
+
+/* ====== Image Container ====== */
+.image-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.search-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ensures no stretch */
+  transition: transform 0.3s ease;
+}
+
+.search-card:hover .search-img {
+  transform: scale(1.05);
+}
+
+/* ====== Info Section ====== */
+.search-info {
+  text-align: center;
+}
+
+.search-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.search-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  min-height: 40px;
+}
+
+/* ====== Price Section ====== */
+.price-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.new-price {
+  color: #e67e22;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ====== Snackbar Message ====== */
+.MuiSnackbar-root {
+  z-index: 2000 !important;
+}
+
+.MuiAlert-root {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* ====== No Results ====== */
+.no-results {
+  text-align: center;
+  color: #555;
+  font-size: 1.2rem;
+  margin-top: 60px;
+}

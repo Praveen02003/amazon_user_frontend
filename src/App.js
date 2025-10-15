@@ -21,35 +21,36 @@ import { Signup } from './Signup/Signup';
 import { Forgetpassword } from './Forgetpassword/Forgetpassword';
 import { Contact } from './Contact/Contact';
 import { Qr } from './Qr/Qr';
-export const Mycontext=createContext()
+import { Search } from './Search/Search';
+export const Mycontext = createContext()
 function App() {
-  const[usermail,setUsermail]=useState("")
-  const[name,setName]=useState("")
-  const[email,setEmail]=useState("")
-  const[password,setPassword]=useState("")
-  const[confirmpassword,setConfirmpassword]=useState("")
-  const[loginemail,setLoginemail]=useState("")
-  const[loginpassword,setLoginpassord]=useState("")
-  const[updateemail,setUpdateemail]=useState("")
-  const[updatepassword,setUpdatepassword]=useState("")
-  const[updateconfirmpassword,setUpdateconfirmpassword]=useState("")
-  const[laptopdata,setLaptopdata]=useState([])
-  const[mobiledata,setMobiledata]=useState([])
-  const[earpodsdata,setEarpodsdata]=useState([])
-  const[tvdata,setTvdata]=useState([])
-  const[hometheatredata,setHometheatredata]=useState([])
-  const[keyboarddata,setKeyboarddata]=useState([])
-  const[mousedata,setMousedata]=useState([])
-  const[chargerdata,setChargerdata]=useState([])
-  const[wishlistcheckedobject, setWishlistcheckedobject] = useState({})
+  const [usermail, setUsermail] = useState("")
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmpassword, setConfirmpassword] = useState("")
+  const [loginemail, setLoginemail] = useState("")
+  const [loginpassword, setLoginpassord] = useState("")
+  const [updateemail, setUpdateemail] = useState("")
+  const [updatepassword, setUpdatepassword] = useState("")
+  const [updateconfirmpassword, setUpdateconfirmpassword] = useState("")
+  const [laptopdata, setLaptopdata] = useState([])
+  const [mobiledata, setMobiledata] = useState([])
+  const [earpodsdata, setEarpodsdata] = useState([])
+  const [tvdata, setTvdata] = useState([])
+  const [hometheatredata, setHometheatredata] = useState([])
+  const [keyboarddata, setKeyboarddata] = useState([])
+  const [mousedata, setMousedata] = useState([])
+  const [chargerdata, setChargerdata] = useState([])
+  const [wishlistcheckedobject, setWishlistcheckedobject] = useState({})
   const [wishlistProducts, setWishlistProducts] = useState([]);
   const [offerProducts, setOfferProducts] = useState([]);
-  const[addtocartobject, setAddtocartobject] = useState({})
-  const[cartdatas,setCartdatas]=useState([])
-  const[cartpricedatas,setCartpricedatas]=useState([])
-  const[cartquantity,setCartquantity]=useState({})
-  const[totalprice,setTotalprice]=useState(0)
-  const[count,setCount]=useState(0)
+  const [addtocartobject, setAddtocartobject] = useState({})
+  const [cartdatas, setCartdatas] = useState([])
+  const [cartpricedatas, setCartpricedatas] = useState([])
+  const [cartquantity, setCartquantity] = useState({})
+  const [totalprice, setTotalprice] = useState(0)
+  const [count, setCount] = useState(0)
   const [open, setOpen] = useState(false);
   const [signuperror, setSignuperror] = useState("");
   const [loginerror, setLoginerror] = useState("");
@@ -57,6 +58,8 @@ function App() {
   const [paymentqr, setPaymentqr] = useState("");
   const [paymentprice, setPaymentprice] = useState("");
   const [showavatar, setShowavatar] = useState(false);
+  const [search, setSearch] = useState("")
+  const [searchdata, setSearchdata] = useState([])
 
   return (
     <div>
@@ -129,31 +132,36 @@ function App() {
           paymentprice,
           setPaymentprice,
           showavatar,
-          setShowavatar
+          setShowavatar,
+          search,
+          setSearch,
+          searchdata,
+          setSearchdata
         }}>
-          <Header/>
+          <Header />
           <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/signup' element={<Signup/>}/>
-            <Route path='/forgetpassword' element={<Forgetpassword/>}/>
-            <Route path='/contactus' element={<Contact/>}/>
-            <Route path='/hot' element={<Hot/>}/>
-            <Route path='/wishlist' element={<Wishlist/>}/>
-            <Route path='/cart' element={<Cart/>}/>
-            <Route path='/laptops' element={<Laptops/>}/>
-            <Route path='/mobiles' element={<Mobiles/>}/>
-            <Route path='/earpods' element={<Earpods/>}/>
-            <Route path='/tvs' element={<Tv/>}/>
-            <Route path='/hometheatres' element={<Hometheatres/>}/>
-            <Route path='/Keyboards' element={<Keyboards/>}/>
-            <Route path='/mouses' element={<Mouse/>}/>
-            <Route path='/chargers' element={<Chargers/>}/>
-            <Route path='/checkout' element={<Checkout/>}/>
-            <Route path='*' element={<Notfound/>}/>
-            <Route path='/payment' element={<Qr/>}/>
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/forgetpassword' element={<Forgetpassword />} />
+            <Route path='/contactus' element={<Contact />} />
+            <Route path='/hot' element={<Hot />} />
+            <Route path='/wishlist' element={<Wishlist />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/laptops' element={<Laptops />} />
+            <Route path='/mobiles' element={<Mobiles />} />
+            <Route path='/earpods' element={<Earpods />} />
+            <Route path='/tvs' element={<Tv />} />
+            <Route path='/hometheatres' element={<Hometheatres />} />
+            <Route path='/Keyboards' element={<Keyboards />} />
+            <Route path='/mouses' element={<Mouse />} />
+            <Route path='/chargers' element={<Chargers />} />
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='*' element={<Notfound />} />
+            <Route path='/payment' element={<Qr />} />
+            <Route path='/search' element={<Search />} />
           </Routes>
-          <Footer/>
+          <Footer />
         </Mycontext.Provider>
       </Router>
     </div>
