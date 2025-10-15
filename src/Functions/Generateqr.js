@@ -1,4 +1,6 @@
-export const generateqr = (navigate, setPaymentprice, setPaymentqr) => {
+import axios from "../Axios/Axios.js"
+
+export const generateqr = async (navigate, setPaymentprice, setPaymentqr) => {
     const token = localStorage.getItem("Token")
     if (!token) {
         navigate("/login")
@@ -9,8 +11,18 @@ export const generateqr = (navigate, setPaymentprice, setPaymentqr) => {
             const pricedata = localStorage.getItem(`carttotal`) || localStorage.getItem(`${mail}carttotal`) || {}
             //console.log("====>",pricedata);
             setPaymentprice(pricedata)
-            const qrcode = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${pricedata}`
-            setPaymentqr(qrcode)
+            try {
+                const userdata = {
+                    amount: pricedata,
+                    orderId: Math.random()
+                }
+                const response = await axios.post('/generateqr', userdata)
+                setPaymentqr(response.data.message)
+
+            } catch (error) {
+                console.log("error");
+                
+            }
         }
     }
 
