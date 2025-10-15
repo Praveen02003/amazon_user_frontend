@@ -7,7 +7,7 @@ import { timeAgo } from '../Functions/Timesago'
 import { Wishlistchange } from '../Functions/Wishlistchange'
 import { addtocart } from '../Functions/Addtocart'
 import { disable } from '../Functions/Disableaddtocart'
-import { Loader } from '../Loader/Loader.js'
+import { loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
@@ -49,7 +49,7 @@ export const Earpods = () => {
     <div className='earpods'>
       <h1 className='earpods-title'>Earpods</h1>
       <div className='earpods-grid'>
-        {earpodsdata.length === 0 ? Loader() :
+        {earpodsdata.length === 0 ? loader() :
           earpodsdata.map((item, index) => {
             return (
               <div className='earpods-card' key={index}>

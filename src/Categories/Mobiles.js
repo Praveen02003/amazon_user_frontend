@@ -7,7 +7,7 @@ import { timeAgo } from '../Functions/Timesago'
 import { Wishlistchange } from '../Functions/Wishlistchange'
 import { addtocart } from '../Functions/Addtocart'
 import { disable } from '../Functions/Disableaddtocart'
-import { Loader } from '../Loader/Loader.js'
+import { loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
@@ -50,7 +50,7 @@ export const Mobiles = () => {
     <div className='mobile'>
       <h1 className='mobile-title'>Mobiles</h1>
       <div className='mobile-grid'>
-        {mobiledata.length === 0 ? Loader() :
+        {mobiledata.length === 0 ? loader() :
           mobiledata.map((item, index) => {
             return (
               <div className='mobile-card' key={index}>

@@ -7,7 +7,7 @@ import { timeAgo } from '../Functions/Timesago'
 import { Wishlistchange } from '../Functions/Wishlistchange'
 import { addtocart } from '../Functions/Addtocart'
 import { disable } from '../Functions/Disableaddtocart'
-import { Loader } from '../Loader/Loader.js'
+import { loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
@@ -49,7 +49,7 @@ export const Keyboards = () => {
     <div className='keyboard'>
       <h1 className='keyboard-title'>Keyboards</h1>
       <div className='keyboard-grid'>
-        {keyboarddata.length === 0 ? Loader() :
+        {keyboarddata.length === 0 ? loader() :
           keyboarddata.map((item, index) => {
             return (
               <div className='keyboard-card' key={index}>

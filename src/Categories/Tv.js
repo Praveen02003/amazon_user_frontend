@@ -7,7 +7,7 @@ import { timeAgo } from '../Functions/Timesago'
 import { Wishlistchange } from '../Functions/Wishlistchange'
 import { addtocart } from '../Functions/Addtocart'
 import { disable } from '../Functions/Disableaddtocart'
-import { Loader } from '../Loader/Loader.js'
+import { loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
@@ -49,7 +49,7 @@ export const Tv = () => {
     <div className='tv'>
       <h1 className='tv-title'>TV</h1>
       <div className='tv-grid'>
-        {tvdata.length === 0 ? Loader() :
+        {tvdata.length === 0 ? loader() :
           tvdata.map((item, index) => {
             return (
               <div className='tv-card' key={index}>

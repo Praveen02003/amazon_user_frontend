@@ -7,7 +7,7 @@ import { timeAgo } from '../Functions/Timesago'
 import { Wishlistchange } from '../Functions/Wishlistchange'
 import { addtocart } from '../Functions/Addtocart'
 import { disable } from '../Functions/Disableaddtocart'
-import { Loader } from '../Loader/Loader.js'
+import { loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
@@ -49,7 +49,7 @@ export const Mouse = () => {
     <div className='mouse'>
       <h1 className='mouse-title'>Mouse</h1>
       <div className='mouse-grid'>
-        {mousedata.length === 0 ? Loader() :
+        {mousedata.length === 0 ? loader() :
           mousedata.map((item, index) => {
             return (
               <div className='mouse-card' key={index}>

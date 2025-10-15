@@ -7,7 +7,7 @@ import { addtocart } from '../Functions/Addtocart'
 import { disable } from '../Functions/Disableaddtocart'
 import { useNavigate } from 'react-router-dom'
 import '../Hot/Hot.css'
-import { Loader } from '../Loader/Loader.js'
+import { loader } from '../Loader/Loader.js'
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
@@ -51,7 +51,7 @@ export const Hot = () => {
     <div className='hot'>
       <h1 className='hot-title'>Hot</h1>
       <div className='hot-grid'>
-        {offerProducts.length === 0 ? Loader() :
+        {offerProducts.length === 0 ? loader() :
           offerProducts.map((item, index) => {
             return (
               <div className='hot-card' key={index}>
