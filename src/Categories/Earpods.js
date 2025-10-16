@@ -67,7 +67,7 @@ export const Earpods = () => {
                 <div className='earpods-info'>
                   <div className='earpods-name'>{item.title}</div>
                   <div className='earpods-desc'>{item.description}</div>
-                  <div className='earpods-date'>{timeAgo(item.createdAt)}</div>
+                  {/* <div className='earpods-date'>{timeAgo(item.createdAt)}</div> */}
                   <div className='earpods-prices'>
                     {item.defaultprice !== 0 && <div className='earpods-old-price'>{item.defaultprice}rs</div>}
                     <div className='earpods-price'>{item.price}rs</div>

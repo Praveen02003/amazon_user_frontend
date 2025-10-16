@@ -67,7 +67,7 @@ export const Hometheatres = () => {
                 <div className='hometheatres-info'>
                   <div className='hometheatres-name'>{item.title}</div>
                   <div className='hometheatres-desc'>{item.description}</div>
-                  <div className='hometheatres-date'>{timeAgo(item.createdAt)}</div>
+                  {/* <div className='hometheatres-date'>{timeAgo(item.createdAt)}</div> */}
                   <div className='hometheatres-prices'>
                     {item.defaultprice !== 0 && <div className='hometheatres-old-price'>{item.defaultprice}rs</div>}
                     <div className='hometheatres-price'>{item.price}rs</div>

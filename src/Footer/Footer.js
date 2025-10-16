@@ -31,7 +31,7 @@ export const Footer = () => {
 
         <div className="footer-bottom">
           <img src={amazonimage} alt="img" className='footerimage' />
-          <h4>Smartcart.in | All Rights Reserved</h4>
+          <h4>Smartcart.in | Version : 1.0 | All Rights Reserved @ 2025</h4>
         </div>
       </div>
     </div>

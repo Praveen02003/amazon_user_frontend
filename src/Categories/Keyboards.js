@@ -67,7 +67,7 @@ export const Keyboards = () => {
                 <div className='keyboard-info'>
                   <div className='keyboard-name'>{item.title}</div>
                   <div className='keyboard-desc'>{item.description}</div>
-                  <div className='keyboard-date'>{timeAgo(item.createdAt)}</div>
+                  {/* <div className='keyboard-date'>{timeAgo(item.createdAt)}</div> */}
                   <div className='keyboard-prices'>
                     {item.defaultprice !== 0 && <div className='keyboard-old-price'>{item.defaultprice}rs</div>}
                     <div className='keyboard-price'>{item.price}rs</div>

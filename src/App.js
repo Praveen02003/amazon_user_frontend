@@ -22,6 +22,7 @@ import { Forgetpassword } from './Forgetpassword/Forgetpassword';
 import { Contact } from './Contact/Contact';
 import { Qr } from './Qr/Qr';
 import { Search } from './Search/Search';
+import { Filter } from './Filter/Filter';
 export const Mycontext = createContext()
 function App() {
   const [usermail, setUsermail] = useState("")
@@ -58,8 +59,12 @@ function App() {
   const [paymentqr, setPaymentqr] = useState("");
   const [paymentprice, setPaymentprice] = useState("");
   const [showavatar, setShowavatar] = useState(false);
+
   const [search, setSearch] = useState("")
   const [searchdata, setSearchdata] = useState([])
+
+  const [filter, setFilter] = useState("")
+  const [filterdata, setFilterdata] = useState([])
 
   return (
     <div>
@@ -136,7 +141,11 @@ function App() {
           search,
           setSearch,
           searchdata,
-          setSearchdata
+          setSearchdata,
+          filter,
+          setFilter,
+          filterdata,
+          setFilterdata
         }}>
           <Header />
           <Routes>
@@ -160,6 +169,7 @@ function App() {
             <Route path='*' element={<Notfound />} />
             <Route path='/payment' element={<Qr />} />
             <Route path='/search' element={<Search />} />
+            <Route path='/filter' element={<Filter/>} />
           </Routes>
           <Footer />
         </Mycontext.Provider>

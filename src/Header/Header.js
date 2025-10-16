@@ -8,6 +8,7 @@ import { getcartlength } from '../Functions/Getcartlength';
 import { ShoppingCart } from "lucide-react";
 import axios from '../Axios/Axios.js';
 import { getsearchdata } from '../Functions/Getsearchdata.js';
+import { getfilterdata } from '../Functions/Getfilterdata.js';
 export const Header = () => {
   const {
     count,
@@ -16,7 +17,11 @@ export const Header = () => {
     setShowavatar,
     search,
     setSearch,
-    setSearchdata
+    setSearchdata,
+    filter,
+    setFilter,
+    filterdata,
+    setFilterdata
   } = useContext(Mycontext)
 
   const navigate = useNavigate()
@@ -33,7 +38,7 @@ export const Header = () => {
         <h1>Smartcart.in</h1>
       </div>
 
-      {/* ===== Center: Nav Links + Search Bar + Cart ===== */}
+      {/* ===== Center: Nav Links + Search Bar + Filter + Cart ===== */}
       <div className="header-center">
         <h2 onClick={() => navigate('/')}>Home</h2>
         <h2 onClick={() => navigate('/hot')}>Hot</h2>
@@ -41,10 +46,50 @@ export const Header = () => {
 
         {/* --- Search Bar --- */}
         <div className="search-bar">
-          <input type="text" placeholder="Search for products..." onChange={(event) => { setSearch(event.target.value) }} />
+          <input
+            type="text"
+            placeholder="Search for products..."
+            onChange={(event) => { setSearch(event.target.value) }}
+          />
           <button onClick={() => { getsearchdata(search, setSearchdata, navigate) }}>Search</button>
         </div>
 
+        {/* --- Filter Dropdown --- */}
+        <div className="filter-bar">
+          <select
+            onChange={(e) => {
+              navigate(`/${e.target.value}`);
+            }}
+          >
+            <option value="">Select - Filter</option>
+            <option value="laptops">laptops</option>
+            <option value="mobiles">mobiles</option>
+            <option value="earpods">earpods</option>
+            <option value="tvs">tvs</option>
+            <option value="hometheatres">hometheatres</option>
+            <option value="Keyboards">Keyboards</option>
+            <option value="mouses">mouses</option>
+            <option value="chargers">chargers</option>
+          </select>
+        </div>
+
+        <div className="price-filter-bar">
+          <select
+            onChange={(event) => {
+              getfilterdata(event.target.value, filter, setFilter, setFilterdata, navigate)
+            }}
+          >
+            <option value="">Filter by Price</option>
+            <option value="0-5000">Below ₹5000</option>
+            <option value="5000-10000">₹5000 - ₹10000</option>
+            <option value="10000-20000">₹10000 - ₹20000</option>
+            <option value="20000-50000">₹20000 - ₹50000</option>
+            <option value="50000-100000">₹50000 - ₹100000</option>
+            <option value="100000-9999999">Above ₹100000</option>
+          </select>
+        </div>
+
+        {/* --- Cart Icon --- */}
         <div className="cart-icon" onClick={() => navigate('/cart')}>
           <ShoppingCart size={28} />
           <span className="cart-count">{getcartlength()}</span>
@@ -79,5 +124,6 @@ export const Header = () => {
         </div>
       </div>
     </div>
+
   )
 }

@@ -68,7 +68,7 @@ export const Mobiles = () => {
                 <div className='mobile-info'>
                   <div className='mobile-name'>{item.title}</div>
                   <div className='mobile-desc'>{item.description}</div>
-                  <div className='mobile-date'>{timeAgo(item.createdAt)}</div>
+                  {/* <div className='mobile-date'>{timeAgo(item.createdAt)}</div> */}
                   <div className='mobile-prices'>
                     {item.defaultprice !== 0 && <div className='mobile-old-price'>{item.defaultprice}rs</div>}
                     <div className='mobile-price'>{item.price}rs</div>

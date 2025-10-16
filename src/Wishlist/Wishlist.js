@@ -69,7 +69,7 @@ export const Wishlist = () => {
                 <div className='wishlist-info'>
                   <div className='wishlist-name'>{item.title}</div>
                   <div className='wishlist-desc'>{item.description}</div>
-                  <div className='wishlist-date'>{timeAgo(item.createdAt)}</div>
+                  {/* <div className='wishlist-date'>{timeAgo(item.createdAt)}</div> */}
                   <div className='wishlist-prices'>
                     {item.defaultprice !== 0 && <div className='wishlist-old-price'>{item.defaultprice}rs</div>}
                     <div className='wishlist-price'>{item.price}rs</div>

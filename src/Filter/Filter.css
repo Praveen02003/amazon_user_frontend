@@ -1,0 +1,178 @@
+/* ===== Filter Page Container ===== */
+.filter-page {
+    min-height: 100vh;
+    padding: 50px 60px;
+    background-color: #f7f8fa;
+    font-family: 'Poppins', sans-serif;
+    color: #1f2937;
+    transition: background 0.3s ease;
+}
+
+/* ===== Page Title ===== */
+.filter-page-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    color: #111827;
+}
+
+/* ===== Grid Layout ===== */
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* ===== Product Card ===== */
+.filter-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Offer Badge ===== */
+.filter-offer {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: #dc2626;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Wishlist Heart ===== */
+.filter-heart {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+}
+
+.filter-heart input {
+    display: none;
+}
+
+.filter-heart label {
+    font-size: 26px;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-heart input:checked+label {
+    color: #ef4444;
+    transform: scale(1.2);
+}
+
+.filter-heart label:hover {
+    transform: scale(1.1);
+    color: #f87171;
+}
+
+/* ===== Image ===== */
+.filter-image-container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f4f6;
+    padding: 15px;
+    transition: background 0.3s ease;
+}
+
+.filter-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.filter-card:hover .filter-img {
+    transform: scale(1.07);
+}
+
+/* ===== Product Info ===== */
+.filter-info {
+    padding: 18px 15px 22px;
+    text-align: center;
+}
+
+/* Title */
+.filter-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #111827;
+    transition: color 0.2s ease;
+}
+
+.filter-card:hover .filter-title {
+    color: #2563eb;
+    /* highlight title on hover */
+}
+
+/* ===== Product Description ===== */
+.filter-desc {
+    font-size: 0.92rem;
+    color: #4b5563;
+    line-height: 1.6;
+    height: 52px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 14px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.filter-card:hover .filter-desc {
+    color: #111827;
+}
+
+/* ===== Price Section ===== */
+.filter-price-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.filter-old-price {
+    text-decoration: line-through;
+    color: #9ca3af;
+    font-size: 0.92rem;
+}
+
+.filter-new-price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #16a34a;
+}
+
+/* ===== No Results ===== */
+.no-results {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 60px;   
+    color: #6b7280;
+    font-weight: 500;
+}

@@ -64,7 +64,7 @@
   cursor: pointer;
   position: relative;
   font-size: 14px;
-  left: 180px;
+  left: 1px;
 }
 
 .cart-icon .cart-count {
@@ -181,6 +181,64 @@
 
 .search-bar button:hover {
   background-color: #ddb347;
+}
+
+.filter-bar {
+  margin-left: 10px;
+}
+
+.filter-bar select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter-bar select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* === Price Filter inside Header === */
+.price-filter-bar {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.price-filter-bar select {
+  padding: 8px 35px 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #2563eb 50%),
+    linear-gradient(135deg, #2563eb 50%, transparent 50%);
+  background-position: calc(100% - 22px) calc(1em + 2px),
+    calc(100% - 17px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.price-filter-bar select:hover {
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.15);
+  transform: translateY(-1px);
+}
+
+.price-filter-bar select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 

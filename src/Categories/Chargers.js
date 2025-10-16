@@ -12,6 +12,7 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose.js'
 import { getlocalstorage } from '../Functions/Getlocalstorage.js'
+import { fetchchargers } from '../Functions/Fetchchargers.js'
 export const Chargers = () => {
   const {
     chargerdata,
@@ -28,18 +29,13 @@ export const Chargers = () => {
     setOpen
   } = useContext(Mycontext)
 
-  const fetchchargers = async () => {
-    const response = await axios.get('/chargers')
-    setChargerdata(response.data.message)
-  }
-
   const navigate = useNavigate()
 
 
   useEffect(() => {
     try {
       getlocalstorage(setWishlistcheckedobject, setAddtocartobject, setCartquantity)
-      fetchchargers()
+      fetchchargers(setChargerdata)
     }
     catch (error) {
       console.log("error");
@@ -67,7 +63,7 @@ export const Chargers = () => {
                 <div className='charger-info'>
                   <div className='charger-name'>{item.title}</div>
                   <div className='charger-desc'>{item.description}</div>
-                  <div className='charger-date'>{timeAgo(item.createdAt)}</div>
+                  {/* <div className='charger-date'>{timeAgo(item.createdAt)}</div> */}
                   <div className='charger-prices'>
                     {item.defaultprice !== 0 && <div className='charger-old-price'>{item.defaultprice}rs</div>}
                     <div className='charger-price'>{item.price}rs</div>

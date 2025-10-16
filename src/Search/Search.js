@@ -9,7 +9,8 @@ import Alert from "@mui/material/Alert";
 import { handleClose } from '../Functions/Handleclose'
 import { Wishlistchange } from '../Functions/Wishlistchange'
 export const Search = () => {
-    const { wishlistcheckedobject,
+    const { 
+        wishlistcheckedobject,
         setWishlistcheckedobject,
         addtocartobject,
         setAddtocartobject,

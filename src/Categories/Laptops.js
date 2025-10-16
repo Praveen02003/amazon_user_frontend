@@ -71,7 +71,7 @@ export const Laptops = () => {
               <div className="laptop-info">
                 <h2 className="laptop-name">{item.title}</h2>
                 <p className="laptop-desc">{item.description}</p>
-                <p className="laptop-date">{timeAgo(item.createdAt)}</p>
+                {/* <p className="laptop-date">{timeAgo(item.createdAt)}</p> */}
                 <div className="laptop-prices">
                   {item.defaultprice !== 0 && <span className="laptop-old-price">{item.defaultprice} rs</span>}
                   <span className="laptop-price">{item.price} rs</span>

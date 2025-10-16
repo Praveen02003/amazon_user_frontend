@@ -67,7 +67,7 @@ export const Mouse = () => {
                 <div className='mouse-info'>
                   <div className='mouse-name'>{item.title}</div>
                   <div className='mouse-desc'>{item.description}</div>
-                  <div className='mouse-date'>{timeAgo(item.createdAt)}</div>
+                  {/* <div className='mouse-date'>{timeAgo(item.createdAt)}</div> */}
                   <div className='mouse-prices'>
                     {item.defaultprice !== 0 && <div className='mouse-old-price'>{item.defaultprice}rs</div>}
                     <div className='mouse-price'>{item.price}rs</div>

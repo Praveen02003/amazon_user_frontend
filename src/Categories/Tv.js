@@ -67,7 +67,7 @@ export const Tv = () => {
                 <div className='tv-info'>
                   <div className='tv-name'>{item.title}</div>
                   <div className='tv-desc'>{item.description}</div>
-                  <div className='tv-date'>{timeAgo(item.createdAt)}</div>
+                  {/* <div className='tv-date'>{timeAgo(item.createdAt)}</div> */}
                   <div className='tv-prices'>
                     {item.defaultprice !== 0 && <div className='tv-old-price'>{item.defaultprice}rs</div>}
                     <div className='tv-price'>{item.price}rs</div>
